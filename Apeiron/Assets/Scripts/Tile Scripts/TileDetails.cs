@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TileDetails : MonoBehaviour
 {
-    private bool upRoom = false;
-    private bool rightRoom = false;
-    private bool downRoom = false;
-    private bool leftRoom = false;
+	//direction bools
+    public bool upRoom = false;
+    public bool rightRoom = false;
+    public bool downRoom = false;
+    public bool leftRoom = false;
+	//variables
+	public bool dirFound = false;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sisterRoomDirections();
     }
@@ -33,5 +36,47 @@ public class TileDetails : MonoBehaviour
         Debug.Log(rightProb);
         Debug.Log(downProb);
         Debug.Log(leftProb);
+		
+		if(this.tag == "SpawnTile") 
+		{
+			//up
+			if(upProb == 1) 
+			{
+				upRoom = true;
+			}
+			if(upProb == 0) 
+			{
+				upRoom = false;
+			}
+			//right
+			if(rightProb == 1) 
+			{
+				rightRoom = true;
+			}
+			if(rightProb == 0) 
+			{
+				rightRoom = false;
+			}
+			//down
+				if(downProb == 1) 
+			{
+				downRoom = true;
+			}	
+				if(downProb == 0) 
+			{
+				downRoom = false;
+			}
+			//left
+			if(leftProb == 1) 
+			{	
+				leftRoom = true;
+			}
+			if(leftProb == 0) 
+			{
+				leftRoom = false;
+			}	
+			dirFound = true;
+		}
+		
     }
 }
