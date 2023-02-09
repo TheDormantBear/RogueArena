@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297572330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03702847, y: -0.0065024197, z: 0.0040631294}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -416,6 +416,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c8527c863699246816208adee9a3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilePositions:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   spawnTile: {fileID: 8453883048529355297, guid: 7ff256ca75ba06c43bd0690034279634, type: 3}
   bossTile: {fileID: 8934399182815262846, guid: 6d8cc708fdf5b844cabf19f47b8cf2dd, type: 3}
   gameTile: {fileID: 225439741712583751, guid: ad818fc3e4d8e79498cee67fcfb53ad0, type: 3}
+  originPoint: {fileID: 0}

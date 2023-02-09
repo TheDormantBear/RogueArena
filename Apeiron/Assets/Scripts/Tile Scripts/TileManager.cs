@@ -5,6 +5,9 @@ using System;
 
 public class TileManager : MonoBehaviour
 {
+	//list of map coordinates
+	public List<Vector2> tilePositions = new List<Vector2>();
+
 	//tile prefabs
     [SerializeField] private GameObject spawnTile;
     [SerializeField] private GameObject bossTile;
@@ -25,6 +28,7 @@ public class TileManager : MonoBehaviour
         
     }
 	
+	//create spawn point
 	void spawnOrigin()
 	{
 		var origin = Instantiate(spawnTile, new Vector2(0, 0), Quaternion.identity); 
@@ -32,10 +36,13 @@ public class TileManager : MonoBehaviour
 		origin.transform.parent = this.transform;
 		
 		originPoint = origin;
-		
+
+		//tilePositions[0] = originPoint.GetComponent<TileDetails>().location;//set up location in details
+
 		createTiles(originPoint.tag);
 	}
 	
+	//create tiles surrounding an orgin (call repeatidly for map fill)
 	void createTiles(String tag)
 	{
 		Debug.Log(tag);
@@ -67,5 +74,11 @@ public class TileManager : MonoBehaviour
 				Instantiate(gameTile, new Vector2(-2, 0), Quaternion.identity);	
 			}
 		}
+
+		if (tag == "GameTile")
+        {
+
+
+        }
 	}
 }
